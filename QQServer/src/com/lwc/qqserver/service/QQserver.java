@@ -52,6 +52,7 @@ public class QQserver {
     public QQserver() {
         try {
             System.out.println("服务器在9999端口监听...");
+            new Thread(new SendNewsToAllService()).start();
             ss = new ServerSocket(9999);
             //当和某个客户端连接后，会一直监听
             while (true) {
